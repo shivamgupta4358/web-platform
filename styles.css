@@ -1,14 +1,15 @@
 /* Base Styles */
 :root {
-  --primary-color: #009688;
-  --secondary-color: #80cbc4;
-  --accent-color: #004d40;
-  --background-light: #f3f4f6;
+  --primary-color: #00bcd4; /* Teal */
+  --secondary-color: #ff5722; /* Vibrant Orange */
+  --accent-color: #4caf50; /* Fresh Green */
+  --background-light: #f8f9fa;
   --background-dark: #263238;
   --text-light: #ffffff;
   --text-dark: #212121;
+  --button-hover-color: #008c9e; /* Darker Teal */
   --shadow: rgba(0, 0, 0, 0.2);
-  --hover-color: #00796b;
+  --link-color: #2196f3; /* Blue */
 }
 
 body {
@@ -51,12 +52,12 @@ header h1 span {
 
 .theme-toggle label {
   cursor: pointer;
-  font-size: 1.8rem;
-  transition: transform 0.3s;
+  font-size: 2rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .theme-toggle label:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 main {
@@ -72,7 +73,7 @@ main {
 }
 
 .program-toggle button {
-  padding: 12px 25px;
+  padding: 12px 30px;
   background: var(--primary-color);
   color: var(--text-light);
   border: none;
@@ -81,12 +82,12 @@ main {
   cursor: pointer;
   box-shadow: 0 4px 6px var(--shadow);
   transition: transform 0.3s, background 0.3s;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .program-toggle button:hover {
   transform: scale(1.1);
-  background-color: var(--hover-color);
+  background-color: var(--button-hover-color);
 }
 
 .program-toggle button.active {
@@ -94,21 +95,22 @@ main {
 }
 
 .semester-section h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 30px;
   color: var(--primary-color);
   text-align: center;
+  text-transform: uppercase;
 }
 
 .semesters {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
 }
 
 .semesters button {
-  width: 150px;
+  width: 160px;
   height: 50px;
   background: var(--secondary-color);
   color: var(--text-light);
@@ -127,17 +129,17 @@ main {
 }
 
 .details {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .details .dropdown {
   margin: 15px 0;
-  padding: 15px;
-  background: var(--secondary-color);
+  padding: 20px;
+  background: var(--primary-color);
   color: var(--text-light);
   border-radius: 12px;
   box-shadow: 0 4px 6px var(--shadow);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-in-out;
 }
 
 .details .dropdown h3 {
@@ -154,33 +156,33 @@ main {
 
 .details .dropdown ul li {
   margin: 10px 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
 .details .dropdown button {
   padding: 8px 20px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-light);
-  background: var(--primary-color);
+  background: var(--secondary-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease-in-out;
 }
 
 .details .dropdown button:hover {
-  background: var(--hover-color);
+  background: var(--button-hover-color);
 }
 
 .details .dropdown ul li button {
   margin-left: 15px;
-  padding: 6px 12px;
-  font-size: 0.85rem;
+  padding: 8px 15px;
+  font-size: 0.9rem;
 }
 
 footer {
-  padding: 15px;
+  padding: 20px;
   background: var(--primary-color);
   color: var(--text-light);
   text-align: center;

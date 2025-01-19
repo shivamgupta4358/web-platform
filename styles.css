@@ -27,7 +27,6 @@ header {
   background-color: var(--primary-color);
   color: var(--text-light);
   box-shadow: 0 4px 6px var(--shadow);
-  animation: fadeIn 1s ease-in-out;
 }
 
 header h1 {
@@ -55,7 +54,6 @@ header h1 span {
 
 main {
   padding: 20px;
-  animation: slideIn 1s ease-out;
 }
 
 .program-toggle {
@@ -73,7 +71,7 @@ main {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 4px 6px var(--shadow);
-  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.2s, background 0.3s;
 }
 
 .program-toggle button:hover {
@@ -119,27 +117,34 @@ main {
   margin-top: 20px;
 }
 
-.details h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: var(--accent-color);
-  text-align: center;
-}
-
-.details .item {
+.details .dropdown {
   margin: 10px 0;
-  animation: fadeInUp 0.8s ease-out;
+  padding: 10px;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--shadow);
 }
 
-.details .item strong {
-  display: inline-block;
-  margin-bottom: 5px;
+.details .dropdown h3 {
+  margin: 0;
+  padding: 5px 0;
 }
 
-.details .item button {
+.details .dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.details .dropdown ul li {
+  margin: 5px 0;
+}
+
+.details .dropdown button {
   margin-left: 10px;
-  padding: 7px 12px;
-  font-size: 0.9rem;
+  padding: 5px 10px;
+  font-size: 0.8rem;
   color: var(--text-light);
   background: var(--primary-color);
   border: none;
@@ -148,24 +153,6 @@ main {
   transition: background 0.3s;
 }
 
-.details .item button:hover {
+.details .dropdown button:hover {
   background: var(--accent-color);
 }
-
-footer {
-  padding: 10px;
-  background: var(--primary-color);
-  color: var(--text-light);
-  text-align: center;
-}
-
-footer span {
-  color: var(--secondary-color);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
- 

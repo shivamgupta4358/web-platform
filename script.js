@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "D.Pharm": ["Year 1", "Year 2"],
   };
 
-  // Mock data for subjects
   const subjects = {
-    "Semester 1": ["Pharmaceutical Chemistry", "Anatomy", "Pharmaceutics"],
+    "Semester 1": ["Pharmaceutical Chemistry", "Human Anatomy", "Pharmaceutics"],
     "Semester 2": ["Pathophysiology", "Pharmacognosy", "Microbiology"],
     "Year 1": ["Biochemistry", "Hospital Pharmacy"],
     "Year 2": ["Clinical Pharmacy", "Pharmacotherapeutics"],
@@ -30,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderDetails(semester) {
+    const selectedSubjects = subjects[semester] || [];
     detailsSection.innerHTML = `
       <h3>${semester}</h3>
       <div class="item">
@@ -39,16 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="item">
         <strong>Subjects:</strong>
         <ul>
-          ${subjects[semester]?.map((subject) => `<li>${subject}</li>`).join("") || "No subjects available."}
+          ${selectedSubjects
+            .map(
+              (subject) => `
+            <li>${subject}
+              <button>Download Notes</button>
+              <button>Download PYQ</button>
+            </li>`
+            )
+            .join("")}
         </ul>
-      </div>
-      <div class="item">
-        <strong>Previous Year Questions:</strong>
-        <button>Download</button>
-      </div>
-      <div class="item">
-        <strong>Notes:</strong>
-        <button>Download</button>
       </div>
     `;
   }

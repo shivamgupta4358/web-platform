@@ -11,15 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const subjects = {
-    "Semester 1": ["Pharmaceutical Chemistry", "Human Anatomy", "Pharmaceutics"],
-    "Semester 2": ["Pathophysiology", "Pharmacognosy", "Microbiology"],
-    "Semester 3": ["Medicinal Chemistry I", "Pharmacology I", "Pharmaceutical Jurisprudence"],
-    "Semester 4": ["Pharmacognosy II", "Pharmacology II", "Physical Pharmacy"],
-    "Semester 5": ["Medicinal Chemistry II", "Pharmacology III", "Clinical Pharmacy"],
-    "Semester 6": ["Pharmaceutical Technology", "Hospital Pharmacy", "Biopharmaceutics"],
-    "Semester 7": ["Instrumental Analysis", "Pharmacy Practice", "Research Methodology"],
-    "Semester 8": ["Advanced Pharmaceutics", "Biotechnology", "Project Work"],
-    "Year 1": ["Pharmaceutics I", "Pharmaceutical Chemistry I", "Pharmacognosy I"],
+    "Semester 1": ["Human Anatomy & Physiology I", "Pharmaceutical Analysis I", "Pharmaceutics I"],
+    "Semester 2": ["Human Anatomy & Physiology II", "Pharmaceutical Organic Chemistry I", "Biochemistry"],
+    "Semester 3": ["Pharmaceutical Organic Chemistry II", "Physical Pharmaceutics I", "Pharmaceutical Microbiology"],
+    "Semester 4": ["Pharmaceutical Organic Chemistry III", "Medicinal Chemistry I", "Pharmacology I"],
+    "Semester 5": ["Medicinal Chemistry II", "Industrial Pharmacy I", "Pharmacology II"],
+    "Semester 6": ["Biopharmaceutics", "Herbal Drug Technology", "Quality Assurance"],
+    "Semester 7": ["Pharmacy Practice", "Novel Drug Delivery System", "Instrumental Analysis"],
+    "Semester 8": ["Project Work", "Pharmacovigilance", "Advanced Instrumentation Techniques"],
+    "Year 1": ["Pharmaceutics I", "Pharmaceutical Chemistry I", "Biochemistry & Clinical Pathology"],
     "Year 2": ["Pharmaceutics II", "Pharmaceutical Chemistry II", "Pharmacology"],
   };
 

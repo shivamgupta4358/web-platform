@@ -31,22 +31,29 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderDetails(semester) {
     const selectedSubjects = subjects[semester] || [];
     detailsSection.innerHTML = `
-      <h3>${semester}</h3>
-      <div class="item">
-        <strong>Syllabus:</strong>
+      <div class="dropdown">
+        <h3>Subjects</h3>
+        <ul>
+          ${selectedSubjects.map((subject) => `<li>${subject}</li>`).join("")}
+        </ul>
+      </div>
+      <div class="dropdown">
+        <h3>Syllabus</h3>
         <button>Download</button>
       </div>
-      <div class="item">
-        <strong>Subjects:</strong>
+      <div class="dropdown">
+        <h3>Notes</h3>
         <ul>
           ${selectedSubjects
-            .map(
-              (subject) => `
-            <li>${subject}
-              <button>Download Notes</button>
-              <button>Download PYQ</button>
-            </li>`
-            )
+            .map((subject) => `<li>${subject} <button>Download</button></li>`)
+            .join("")}
+        </ul>
+      </div>
+      <div class="dropdown">
+        <h3>PYQs</h3>
+        <ul>
+          ${selectedSubjects
+            .map((subject) => `<li>${subject} <button>Download</button></li>`)
             .join("")}
         </ul>
       </div>

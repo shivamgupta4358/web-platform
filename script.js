@@ -18,11 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "Pharmaceutical Inorganic Chemistry – Theory",
       "Communication Skills – Theory",
       "Remedial Biology/Mathematics – Theory",
-      "Human Anatomy and Physiology I – Practical",
-      "Pharmaceutical Analysis I – Practical",
-      "Pharmaceutics I – Practical",
-      "Pharmaceutical Inorganic Chemistry – Practical",
-      "Communication Skills – Practical",
     ],
     "Semester 2": [
       "Human Anatomy and Physiology II – Theory",
@@ -31,12 +26,56 @@ document.addEventListener("DOMContentLoaded", () => {
       "Pathophysiology – Theory",
       "Computer Applications in Pharmacy – Theory",
       "Environmental Sciences",
-      "Human Anatomy and Physiology II – Practical",
-      "Pharmaceutical Organic Chemistry I – Practical",
-      "Biochemistry – Practical",
-      "Computer Applications in Pharmacy – Practical",
     ],
-    // Add all other semesters here...
+    "Semester 3": [
+      "Pharmaceutical Organic Chemistry II – Theory",
+      "Physical Pharmaceutics I – Theory",
+      "Pharmaceutical Microbiology – Theory",
+      "Pharmaceutical Engineering – Theory",
+    ],
+    "Semester 4": [
+      "Pharmaceutical Organic Chemistry III – Theory",
+      "Medicinal Chemistry I – Theory",
+      "Physical Pharmaceutics II – Theory",
+      "Pharmacology I – Theory",
+      "Pharmacognosy and Phytochemistry I – Theory",
+    ],
+    "Semester 5": [
+      "Medicinal Chemistry II – Theory",
+      "Industrial Pharmacy I – Theory",
+      "Pharmacology II – Theory",
+      "Pharmacognosy and Phytochemistry II – Theory",
+      "Pharmaceutical Jurisprudence – Theory",
+    ],
+    "Semester 6": [
+      "Medicinal Chemistry III – Theory",
+      "Pharmacology III – Theory",
+      "Herbal Drug Technology – Theory",
+      "Biopharmaceutics and Pharmacokinetics – Theory",
+      "Pharmaceutical Biotechnology – Theory",
+      "Quality Assurance – Theory",
+    ],
+    "Semester 7": [
+      "Instrumental Methods of Analysis – Theory",
+      "Industrial Pharmacy II – Theory",
+      "Pharmacy Practice – Theory",
+      "Novel Drug Delivery System – Theory",
+    ],
+    "Semester 8": [
+      "Biostatistics and Research Methodology – Theory",
+      "Social and Preventive Pharmacy – Theory",
+      "Pharma Marketing Management – Theory",
+      "Pharmaceutical Regulatory Science – Theory",
+      "Pharmacovigilance – Theory",
+      "Quality Control and Standardization of Herbals – Theory",
+      "Computer-Aided Drug Design – Theory",
+      "Cell and Molecular Biology – Theory",
+      "Cosmetic Science – Theory",
+      "Experimental Pharmacology – Theory",
+      "Advanced Instrumentation Techniques – Theory",
+      "Dietary Supplements and Nutraceuticals – Theory",
+      "Project Work",
+    ],
     "Year 1": [
       "Pharmaceutics I",
       "Pharmaceutical Chemistry I",
@@ -83,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>Notes</h3>
         <ul>
           ${selectedSubjects
+            .filter((subject) => !subject.includes("Practical"))  // Exclude practical subjects
             .map((subject) => `<li>${subject} <button>Download</button></li>`)
             .join("")}
         </ul>
@@ -91,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>PYQs</h3>
         <ul>
           ${selectedSubjects
+            .filter((subject) => !subject.includes("Practical"))  // Exclude practical subjects
             .map((subject) => `<li>${subject} <button>Download</button></li>`)
             .join("")}
         </ul>

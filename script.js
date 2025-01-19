@@ -11,16 +11,48 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const subjects = {
-    "Semester 1": ["Human Anatomy & Physiology I", "Pharmaceutical Analysis I", "Pharmaceutics I"],
-    "Semester 2": ["Human Anatomy & Physiology II", "Pharmaceutical Organic Chemistry I", "Biochemistry"],
-    "Semester 3": ["Pharmaceutical Organic Chemistry II", "Physical Pharmaceutics I", "Pharmaceutical Microbiology"],
-    "Semester 4": ["Pharmaceutical Organic Chemistry III", "Medicinal Chemistry I", "Pharmacology I"],
-    "Semester 5": ["Medicinal Chemistry II", "Industrial Pharmacy I", "Pharmacology II"],
-    "Semester 6": ["Biopharmaceutics", "Herbal Drug Technology", "Quality Assurance"],
-    "Semester 7": ["Pharmacy Practice", "Novel Drug Delivery System", "Instrumental Analysis"],
-    "Semester 8": ["Project Work", "Pharmacovigilance", "Advanced Instrumentation Techniques"],
-    "Year 1": ["Pharmaceutics I", "Pharmaceutical Chemistry I", "Biochemistry & Clinical Pathology"],
-    "Year 2": ["Pharmaceutics II", "Pharmaceutical Chemistry II", "Pharmacology"],
+    "Semester 1": [
+      "Human Anatomy and Physiology I – Theory",
+      "Pharmaceutical Analysis I – Theory",
+      "Pharmaceutics I – Theory",
+      "Pharmaceutical Inorganic Chemistry – Theory",
+      "Communication Skills – Theory",
+      "Remedial Biology/Mathematics – Theory",
+      "Human Anatomy and Physiology I – Practical",
+      "Pharmaceutical Analysis I – Practical",
+      "Pharmaceutics I – Practical",
+      "Pharmaceutical Inorganic Chemistry – Practical",
+      "Communication Skills – Practical",
+    ],
+    "Semester 2": [
+      "Human Anatomy and Physiology II – Theory",
+      "Pharmaceutical Organic Chemistry I – Theory",
+      "Biochemistry – Theory",
+      "Pathophysiology – Theory",
+      "Computer Applications in Pharmacy – Theory",
+      "Environmental Sciences",
+      "Human Anatomy and Physiology II – Practical",
+      "Pharmaceutical Organic Chemistry I – Practical",
+      "Biochemistry – Practical",
+      "Computer Applications in Pharmacy – Practical",
+    ],
+    // Add all other semesters here...
+    "Year 1": [
+      "Pharmaceutics I",
+      "Pharmaceutical Chemistry I",
+      "Pharmacognosy",
+      "Biochemistry and Clinical Pathology",
+      "Human Anatomy and Physiology",
+      "Health Education and Community Pharmacy",
+    ],
+    "Year 2": [
+      "Pharmaceutics II",
+      "Pharmaceutical Chemistry II",
+      "Pharmacology and Toxicology",
+      "Pharmaceutical Jurisprudence",
+      "Drug Store and Business Management",
+      "Hospital and Clinical Pharmacy",
+    ],
   };
 
   function renderSemesters(program) {

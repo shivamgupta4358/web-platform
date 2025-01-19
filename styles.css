@@ -8,6 +8,7 @@
   --text-light: #ffffff;
   --text-dark: #212121;
   --shadow: rgba(0, 0, 0, 0.2);
+  --hover-color: #00796b;
 }
 
 body {
@@ -23,14 +24,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px;
   background-color: var(--primary-color);
   color: var(--text-light);
   box-shadow: 0 4px 6px var(--shadow);
+  animation: fadeIn 1s ease-in-out;
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -49,21 +51,28 @@ header h1 span {
 
 .theme-toggle label {
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  transition: transform 0.3s;
+}
+
+.theme-toggle label:hover {
+  transform: scale(1.1);
 }
 
 main {
-  padding: 20px;
+  padding: 30px;
+  animation: slideIn 1s ease-out;
 }
 
 .program-toggle {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .program-toggle button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background: var(--primary-color);
   color: var(--text-light);
   border: none;
@@ -71,11 +80,13 @@ main {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 4px 6px var(--shadow);
-  transition: transform 0.2s, background 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  font-size: 1rem;
 }
 
 .program-toggle button:hover {
   transform: scale(1.1);
+  background-color: var(--hover-color);
 }
 
 .program-toggle button.active {
@@ -83,25 +94,27 @@ main {
 }
 
 .semester-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  text-align: center;
 }
 
 .semesters {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
 }
 
 .semesters button {
-  width: 120px;
+  width: 150px;
   height: 50px;
   background: var(--secondary-color);
   color: var(--text-light);
   border: none;
   border-radius: 50px;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 4px 6px var(--shadow);
@@ -114,37 +127,40 @@ main {
 }
 
 .details {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .details .dropdown {
-  margin: 10px 0;
-  padding: 10px;
+  margin: 15px 0;
+  padding: 15px;
   background: var(--secondary-color);
   color: var(--text-light);
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 4px 6px var(--shadow);
+  transition: transform 0.3s;
 }
 
 .details .dropdown h3 {
   margin: 0;
-  padding: 5px 0;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .details .dropdown ul {
   list-style: none;
   padding: 0;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .details .dropdown ul li {
-  margin: 5px 0;
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .details .dropdown button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  font-size: 0.8rem;
+  padding: 8px 20px;
+  font-size: 0.9rem;
   color: var(--text-light);
   background: var(--primary-color);
   border: none;
@@ -154,5 +170,44 @@ main {
 }
 
 .details .dropdown button:hover {
-  background: var(--accent-color);
+  background: var(--hover-color);
+}
+
+.details .dropdown ul li button {
+  margin-left: 15px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+footer {
+  padding: 15px;
+  background: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer span {
+  color: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

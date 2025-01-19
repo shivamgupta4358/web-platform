@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   };
 
+  // Render the semester buttons
   function renderSemesters(program) {
     programTitle.textContent = program;
     semesterContainer.innerHTML = "";
@@ -105,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Render the details of the selected semester
   function renderDetails(semester) {
     const selectedSubjects = subjects[semester] || [];
     detailsSection.innerHTML = `
@@ -139,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  // Program and semester toggle
   programToggle.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {
       document.querySelectorAll(".program-toggle button").forEach((btn) => btn.classList.remove("active"));
@@ -147,9 +150,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Theme toggle functionality
   themeToggle.addEventListener("change", () => {
-    document.body.classList.toggle("dark-mode", themeToggle.checked);
+    if (themeToggle.checked) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
   });
 
+  // Initial render
   renderSemesters("B.Pharm");
 });

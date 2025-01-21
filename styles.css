@@ -1,98 +1,245 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Root Variables for Color Scheme */
+:root {
+  --primary-color: #008080; /* Teal */
+  --secondary-color: #ff6347; /* Tomato Orange */
+  --accent-color: #32cd32; /* Lime Green */
+  --background-light: #ffffff;
+  --background-dark: #2e2e2e;
+  --text-light: #ffffff;
+  --text-dark: #212121;
+  --button-hover-color: #006666; /* Darker Teal */
+  --shadow: rgba(0, 0, 0, 0.1);
+  --link-color: #1e90ff; /* Dodger Blue */
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode {
-  background-color: #333;
-  color: #f4f4f4;
-}
-
-.container {
-  width: 80%;
-  margin: auto;
-  padding: 20px;
+  background-color: var(--background-dark);
+  color: var(--text-light);
 }
 
 header {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: background-color 0.3s ease;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+header h1 span {
+  color: var(--secondary-color);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+.theme-toggle label {
+  font-size: 2rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle label:hover {
+  transform: scale(1.2);
+}
+
+main {
+  padding: 30px;
+  animation: slideIn 1s ease-out;
+  max-width: 1200px;
+  margin: 0 auto; /* Centered content */
+}
+
+.program-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   margin-bottom: 30px;
 }
 
-h1 {
-  font-size: 36px;
-}
-
 .program-toggle button {
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #555;
-  color: white;
-}
-
-#semester-container button {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  font-size: 18px;
-  margin: 10px 0;
-  cursor: pointer;
-}
-
-#details-section {
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown {
-  margin-bottom: 20px;
-}
-
-.dropdown h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-ul {
-  list-style-type: none;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 8px 16px;
-  cursor: pointer;
+  padding: 12px 30px;
+  background: var(--primary-color);
+  color: var(--text-light);
   border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: transform 0.3s, background 0.3s;
+  font-size: 1.1rem;
 }
 
-button:hover {
-  background-color: #45a049;
+.program-toggle button:hover {
+  transform: scale(1.1);
+  background-color: var(--button-hover-color);
+}
+
+.program-toggle button.active {
+  background: var(--accent-color);
+}
+
+.semester-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.semesters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.semesters button {
+  width: 180px;
+  height: 60px;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.semesters button:hover {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.details {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.details .dropdown {
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--primary-color);
+  color: var(--text-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: transform 0.3s ease-in-out;
+  width: 80%;
+  max-width: 600px; /* Limiting width for better structure */
+}
+
+.details .dropdown h3 {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.details .dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.details .dropdown ul li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.details .dropdown button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: var(--text-light);
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.details .dropdown button:hover {
+  background: var(--button-hover-color);
+}
+
+.details .dropdown ul li button {
+  margin-left: 15px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
 }
 
 footer {
-  text-align: center;
   padding: 20px;
-  background-color: #222;
-  color: #fff;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
+  background: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer span {
+  color: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .program-toggle {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .semesters button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .details .dropdown {
+    width: 90%;
+  }
 }

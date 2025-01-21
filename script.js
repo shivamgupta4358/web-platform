@@ -132,8 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>Notes</h3>
         <ul>
           ${selectedSubjects
-            .filter((subject) => !subject.hasPractical) // Exclude practical subjects
-            .map((subject) => `<li>${subject.name} <button>Download</button></li>`)
+            .map((subject) => `<li>${subject.name} <button>Download</button></li>`) // All theory subjects
             .join("")}
         </ul>
       </div>

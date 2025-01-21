@@ -117,7 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ${semester === "Semester 6" ? `<a href="https://drive.google.com/file/d/1j3gp8MHH75Y9tp9Zu2OP60ltV6efNheD/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
         ${semester === "Semester 7" ? `<a href="https://drive.google.com/file/d/12Fmkep5WPLaAgz1jZdSwPbX4XPeJmUic/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
         ${semester === "Semester 8" ? `<a href="https://drive.google.com/file/d/16Y4LrUhm3KqFT7nd0b_z8fSmcniCQMBD/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
-        ${semester !== "Semester 1" && semester !== "Semester 2" && semester !== "Semester 3" && semester !== "Semester 4" && semester !== "Semester 5" && semester !== "Semester 6" && semester !== "Semester 7" && semester !== "Semester 8" ? `<button>Download</button>` : ""}
       </div>
       <div class="dropdown">
         <h3>Notes</h3>

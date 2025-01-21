@@ -3,27 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notes Sharing Platform</title>
+  <title>Pharma Notes Platform</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1 id="program-title">B.Pharm</h1>
-      <div class="program-toggle">
-        <button id="bpharm">B.Pharm</button>
-        <button id="dpharm">D.Pharm</button>
-      </div>
+  <header>
+    <h1>Pharma<span>Notes</span></h1>
+    <div class="theme-toggle">
+      <label for="theme-toggle">🌙</label>
       <input type="checkbox" id="theme-toggle">
-      <label for="theme-toggle">Toggle Dark/Light Mode</label>
-    </header>
+    </div>
+  </header>
 
-    <div id="semester-container"></div>
-    <div id="details-section"></div>
-  </div>
+  <main>
+    <div class="program-toggle">
+      <button id="bpharm" class="active">B.Pharm</button>
+      <button id="dpharm">D.Pharm</button>
+    </div>
+    <div class="semester-section">
+      <h2 id="program-title">B.Pharm</h2>
+      <div id="semester-container" class="semesters">
+        <!-- Semester buttons dynamically inserted -->
+      </div>
+    </div>
+    <div id="details-section" class="details">
+      <!-- Dropdowns for subjects, syllabus, notes, and PYQs -->
+    </div>
+  </main>
 
-  <footer id="footer">
-    <p>Created by SHIVAM GUPTA</p>
+  <footer>
+    <p>Created by <span>DEKI SAMA</span> | © 2025</p>
   </footer>
 
   <script src="script.js"></script>

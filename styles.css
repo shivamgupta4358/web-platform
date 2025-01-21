@@ -36,11 +36,16 @@ h1 {
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
+  border-radius: 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #555;
-  color: white;
+.program-toggle button:hover {
+  background-color: #45a049;
 }
 
 #semester-container button {
@@ -50,12 +55,22 @@ button:hover {
   font-size: 18px;
   margin: 10px 0;
   cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+#semester-container button:hover {
+  background-color: #45a049;
 }
 
 #details-section {
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .dropdown {
@@ -81,6 +96,8 @@ button {
   padding: 8px 16px;
   cursor: pointer;
   border: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -95,4 +112,8 @@ footer {
   position: absolute;
   width: 100%;
   bottom: 0;
+}
+
+input[type="checkbox"]:checked + label {
+  color: #4CAF50;
 }

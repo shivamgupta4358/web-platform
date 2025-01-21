@@ -77,23 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
       { name: "Dietary Supplements and Nutraceuticals", hasPractical: false },
       { name: "Project Work", hasPractical: false },
     ],
-    // D.Pharm Years
-    "Year 1": [
-      { name: "Pharmaceutics I", hasPractical: true },
-      { name: "Pharmaceutical Chemistry I", hasPractical: true },
-      { name: "Pharmacognosy", hasPractical: true },
-      { name: "Biochemistry and Clinical Pathology", hasPractical: true },
-      { name: "Human Anatomy and Physiology", hasPractical: true },
-      { name: "Health Education and Community Pharmacy", hasPractical: false },
-    ],
-    "Year 2": [
-      { name: "Pharmaceutics II", hasPractical: true },
-      { name: "Pharmaceutical Chemistry II", hasPractical: true },
-      { name: "Pharmacology and Toxicology", hasPractical: true },
-      { name: "Pharmaceutical Jurisprudence", hasPractical: false },
-      { name: "Drug Store and Business Management", hasPractical: false },
-      { name: "Hospital and Clinical Pharmacy", hasPractical: true },
-    ],
   };
 
   // Render semester buttons
@@ -126,7 +109,15 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="dropdown">
         <h3>Syllabus</h3>
-        <button>Download</button>
+        ${semester === "Semester 1" ? `<a href="https://drive.google.com/file/d/15-cIl6C_fAwWMvI_TZTDSvd-Tu3WWrAq/view?usp=sharing" target="_blank"><button>Download Syllabus</button></a>` : ""}
+        ${semester === "Semester 2" ? `<a href="https://drive.google.com/file/d/1C8Fls458MDclPpkagruBrzwikdGf7OeI/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
+        ${semester === "Semester 3" ? `<a href="https://drive.google.com/file/d/1GCFN7eAY4kGwOna2J0kekz_1PUrFcUAY/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
+        ${semester === "Semester 4" ? `<a href="https://drive.google.com/file/d/1tB44Ougteo4aCHTMrlY8N51XWiy5OjJX/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
+        ${semester === "Semester 5" ? `<a href="https://drive.google.com/file/d/1NseqN5Y5MiNcsS0MHCHGBot_GPKuJw4H/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
+        ${semester === "Semester 6" ? `<a href="https://drive.google.com/file/d/1j3gp8MHH75Y9tp9Zu2OP60ltV6efNheD/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
+        ${semester === "Semester 7" ? `<a href="https://drive.google.com/file/d/12Fmkep5WPLaAgz1jZdSwPbX4XPeJmUic/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
+        ${semester === "Semester 8" ? `<a href="https://drive.google.com/file/d/16Y4LrUhm3KqFT7nd0b_z8fSmcniCQMBD/view?usp=share_link" target="_blank"><button>Download Syllabus</button></a>` : ""}
+        ${semester !== "Semester 1" && semester !== "Semester 2" && semester !== "Semester 3" && semester !== "Semester 4" && semester !== "Semester 5" && semester !== "Semester 6" && semester !== "Semester 7" && semester !== "Semester 8" ? `<button>Download</button>` : ""}
       </div>
       <div class="dropdown">
         <h3>Notes</h3>

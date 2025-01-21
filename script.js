@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const subjects = {
-    // B.Pharm Semesters
+    // Semester 1
     "Semester 1": [
       { name: "Human Anatomy and Physiology I", hasPractical: true },
       { name: "Pharmaceutical Analysis I", hasPractical: true },
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { name: "Communication Skills", hasPractical: true },
       { name: "Remedial Biology/Mathematics", hasPractical: false },
     ],
+    // Semester 2
     "Semester 2": [
       { name: "Human Anatomy and Physiology II", hasPractical: true },
       { name: "Pharmaceutical Organic Chemistry I", hasPractical: true },
@@ -27,72 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
       { name: "Pathophysiology", hasPractical: false },
       { name: "Computer Applications in Pharmacy", hasPractical: true },
       { name: "Environmental Sciences", hasPractical: false },
-    ],
-    "Semester 3": [
-      { name: "Pharmaceutical Organic Chemistry II", hasPractical: true },
-      { name: "Physical Pharmaceutics I", hasPractical: true },
-      { name: "Pharmaceutical Microbiology", hasPractical: true },
-      { name: "Pharmaceutical Engineering", hasPractical: true },
-    ],
-    "Semester 4": [
-      { name: "Pharmaceutical Organic Chemistry III", hasPractical: true },
-      { name: "Medicinal Chemistry I", hasPractical: true },
-      { name: "Physical Pharmaceutics II", hasPractical: true },
-      { name: "Pharmacology I", hasPractical: true },
-      { name: "Pharmacognosy and Phytochemistry I", hasPractical: true },
-    ],
-    "Semester 5": [
-      { name: "Medicinal Chemistry II", hasPractical: true },
-      { name: "Industrial Pharmacy I", hasPractical: true },
-      { name: "Pharmacology II", hasPractical: true },
-      { name: "Pharmacognosy and Phytochemistry II", hasPractical: true },
-      { name: "Pharmaceutical Jurisprudence", hasPractical: false },
-    ],
-    "Semester 6": [
-      { name: "Medicinal Chemistry III", hasPractical: true },
-      { name: "Pharmacology III", hasPractical: true },
-      { name: "Herbal Drug Technology", hasPractical: true },
-      { name: "Biopharmaceutics and Pharmacokinetics", hasPractical: false },
-      { name: "Pharmaceutical Biotechnology", hasPractical: false },
-      { name: "Quality Assurance", hasPractical: false },
-    ],
-    "Semester 7": [
-      { name: "Instrumental Methods of Analysis", hasPractical: true },
-      { name: "Industrial Pharmacy II", hasPractical: true },
-      { name: "Pharmacy Practice", hasPractical: true },
-      { name: "Novel Drug Delivery System", hasPractical: false },
-    ],
-    "Semester 8": [
-      { name: "Biostatistics and Research Methodology", hasPractical: false },
-      { name: "Social and Preventive Pharmacy", hasPractical: false },
-      { name: "Pharma Marketing Management", hasPractical: false },
-      { name: "Pharmaceutical Regulatory Science", hasPractical: false },
-      { name: "Pharmacovigilance", hasPractical: false },
-      { name: "Quality Control and Standardization of Herbals", hasPractical: false },
-      { name: "Computer-Aided Drug Design", hasPractical: false },
-      { name: "Cell and Molecular Biology", hasPractical: false },
-      { name: "Cosmetic Science", hasPractical: false },
-      { name: "Experimental Pharmacology", hasPractical: false },
-      { name: "Advanced Instrumentation Techniques", hasPractical: false },
-      { name: "Dietary Supplements and Nutraceuticals", hasPractical: false },
-      { name: "Project Work", hasPractical: false },
-    ],
-    // D.Pharm Years
-    "Year 1": [
-      { name: "Pharmaceutics I", hasPractical: true },
-      { name: "Pharmaceutical Chemistry I", hasPractical: true },
-      { name: "Pharmacognosy", hasPractical: true },
-      { name: "Biochemistry and Clinical Pathology", hasPractical: true },
-      { name: "Human Anatomy and Physiology", hasPractical: true },
-      { name: "Health Education and Community Pharmacy", hasPractical: false },
-    ],
-    "Year 2": [
-      { name: "Pharmaceutics II", hasPractical: true },
-      { name: "Pharmaceutical Chemistry II", hasPractical: true },
-      { name: "Pharmacology and Toxicology", hasPractical: true },
-      { name: "Pharmaceutical Jurisprudence", hasPractical: false },
-      { name: "Drug Store and Business Management", hasPractical: false },
-      { name: "Hospital and Clinical Pharmacy", hasPractical: true },
     ],
   };
 
@@ -132,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>Notes</h3>
         <ul>
           ${selectedSubjects
-            .map((subject) => `<li>${subject.name} <button>Download</button></li>`) // All theory subjects
+            .map((subject) => `<li>${subject.name} <button>Download</button></li>`) // Include all theory subjects
             .join("")}
         </ul>
       </div>
@@ -140,8 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>PYQs</h3>
         <ul>
           ${selectedSubjects
-            .filter((subject) => !subject.hasPractical) // Exclude practical subjects
-            .map((subject) => `<li>${subject.name} <button>Download</button></li>`)
+            .map((subject) => `<li>${subject.name} <button>Download</button></li>`) // Include all theory subjects
             .join("")}
         </ul>
       </div>

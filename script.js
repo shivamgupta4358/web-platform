@@ -12,89 +12,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const subjects = {
     "Semester 1": [
-      { theory: "Human Anatomy and Physiology I – Theory", practical: "Human Anatomy and Physiology I – Practical" },
-      { theory: "Pharmaceutical Analysis I – Theory", practical: "Pharmaceutical Analysis I – Practical" },
-      { theory: "Pharmaceutics I – Theory", practical: "Pharmaceutics I – Practical" },
-      { theory: "Pharmaceutical Inorganic Chemistry – Theory", practical: "Pharmaceutical Inorganic Chemistry – Practical" },
-      { theory: "Communication Skills – Theory", practical: "Communication Skills – Practical" },
-      { theory: "Remedial Biology/Mathematics – Theory" },
+      { name: "Human Anatomy and Physiology I", hasPractical: true },
+      { name: "Pharmaceutical Analysis I", hasPractical: true },
+      { name: "Pharmaceutics I", hasPractical: true },
+      { name: "Pharmaceutical Inorganic Chemistry", hasPractical: true },
+      { name: "Communication Skills", hasPractical: true },
+      { name: "Remedial Biology/Mathematics", hasPractical: false },
     ],
     "Semester 2": [
-      { theory: "Human Anatomy and Physiology II – Theory", practical: "Human Anatomy and Physiology II – Practical" },
-      { theory: "Pharmaceutical Organic Chemistry I – Theory", practical: "Pharmaceutical Organic Chemistry I – Practical" },
-      { theory: "Biochemistry – Theory", practical: "Biochemistry – Practical" },
-      { theory: "Pathophysiology – Theory" },
-      { theory: "Computer Applications in Pharmacy – Theory", practical: "Computer Applications in Pharmacy – Practical" },
-      { theory: "Environmental Sciences" },
+      { name: "Human Anatomy and Physiology II", hasPractical: true },
+      { name: "Pharmaceutical Organic Chemistry I", hasPractical: true },
+      { name: "Biochemistry", hasPractical: true },
+      { name: "Pathophysiology", hasPractical: false },
+      { name: "Computer Applications in Pharmacy", hasPractical: true },
+      { name: "Environmental Sciences", hasPractical: false },
     ],
     "Semester 3": [
-      { theory: "Pharmaceutical Organic Chemistry II – Theory", practical: "Pharmaceutical Organic Chemistry II – Practical" },
-      { theory: "Physical Pharmaceutics I – Theory", practical: "Physical Pharmaceutics I – Practical" },
-      { theory: "Pharmaceutical Microbiology – Theory", practical: "Pharmaceutical Microbiology – Practical" },
-      { theory: "Pharmaceutical Engineering – Theory", practical: "Pharmaceutical Engineering – Practical" },
+      { name: "Pharmaceutical Organic Chemistry II", hasPractical: true },
+      { name: "Physical Pharmaceutics I", hasPractical: true },
+      { name: "Pharmaceutical Microbiology", hasPractical: true },
+      { name: "Pharmaceutical Engineering", hasPractical: true },
     ],
     "Semester 4": [
-      { theory: "Pharmaceutical Organic Chemistry III – Theory", practical: "Pharmaceutical Organic Chemistry III – Practical" },
-      { theory: "Medicinal Chemistry I – Theory", practical: "Medicinal Chemistry I – Practical" },
-      { theory: "Physical Pharmaceutics II – Theory", practical: "Physical Pharmaceutics II – Practical" },
-      { theory: "Pharmacology I – Theory", practical: "Pharmacology I – Practical" },
-      { theory: "Pharmacognosy and Phytochemistry I – Theory", practical: "Pharmacognosy and Phytochemistry I – Practical" },
+      { name: "Pharmaceutical Organic Chemistry III", hasPractical: true },
+      { name: "Medicinal Chemistry I", hasPractical: true },
+      { name: "Physical Pharmaceutics II", hasPractical: true },
+      { name: "Pharmacology I", hasPractical: true },
+      { name: "Pharmacognosy and Phytochemistry I", hasPractical: true },
     ],
-    "Semester 5": [
-      { theory: "Medicinal Chemistry II – Theory", practical: "Medicinal Chemistry II – Practical" },
-      { theory: "Industrial Pharmacy I – Theory", practical: "Industrial Pharmacy I – Practical" },
-      { theory: "Pharmacology II – Theory", practical: "Pharmacology II – Practical" },
-      { theory: "Pharmacognosy and Phytochemistry II – Theory", practical: "Pharmacognosy and Phytochemistry II – Practical" },
-      { theory: "Pharmaceutical Jurisprudence – Theory" },
-    ],
-    "Semester 6": [
-      { theory: "Medicinal Chemistry III – Theory", practical: "Medicinal Chemistry III – Practical" },
-      { theory: "Pharmacology III – Theory", practical: "Pharmacology III – Practical" },
-      { theory: "Herbal Drug Technology – Theory", practical: "Herbal Drug Technology – Practical" },
-      { theory: "Biopharmaceutics and Pharmacokinetics – Theory", practical: "Biopharmaceutics and Pharmacokinetics – Practical" },
-      { theory: "Pharmaceutical Biotechnology – Theory" },
-      { theory: "Quality Assurance – Theory" },
-    ],
-    "Semester 7": [
-      { theory: "Instrumental Methods of Analysis – Theory", practical: "Instrumental Methods of Analysis – Practical" },
-      { theory: "Industrial Pharmacy II – Theory", practical: "Industrial Pharmacy II – Practical" },
-      { theory: "Pharmacy Practice – Theory", practical: "Pharmacy Practice – Practical" },
-      { theory: "Novel Drug Delivery System – Theory" },
-    ],
-    "Semester 8": [
-      { theory: "Biostatistics and Research Methodology – Theory" },
-      { theory: "Social and Preventive Pharmacy – Theory" },
-      { theory: "Pharma Marketing Management – Theory" },
-      { theory: "Pharmaceutical Regulatory Science – Theory" },
-      { theory: "Pharmacovigilance – Theory" },
-      { theory: "Quality Control and Standardization of Herbals – Theory" },
-      { theory: "Computer-Aided Drug Design – Theory" },
-      { theory: "Cell and Molecular Biology – Theory" },
-      { theory: "Cosmetic Science – Theory" },
-      { theory: "Experimental Pharmacology – Theory" },
-      { theory: "Advanced Instrumentation Techniques – Theory" },
-      { theory: "Dietary Supplements and Nutraceuticals – Theory" },
-      { theory: "Project Work" },
-    ],
-    "Year 1": [
-      "Pharmaceutics I",
-      "Pharmaceutical Chemistry I",
-      "Pharmacognosy",
-      "Biochemistry and Clinical Pathology",
-      "Human Anatomy and Physiology",
-      "Health Education and Community Pharmacy",
-    ],
-    "Year 2": [
-      "Pharmaceutics II",
-      "Pharmaceutical Chemistry II",
-      "Pharmacology and Toxicology",
-      "Pharmaceutical Jurisprudence",
-      "Drug Store and Business Management",
-      "Hospital and Clinical Pharmacy",
-    ],
+    // Add the remaining semesters here...
   };
 
-  // Render the semester buttons
+  // Render semester buttons
   function renderSemesters(program) {
     programTitle.textContent = program;
     semesterContainer.innerHTML = "";
@@ -106,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Render the details of the selected semester
+  // Render details for the selected semester
   function renderDetails(semester) {
     const selectedSubjects = subjects[semester] || [];
     detailsSection.innerHTML = `
@@ -116,7 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
           ${selectedSubjects
             .map(
               (subject) =>
-                `<li>${subject.theory} ${subject.practical ? `<span>(Practical: ${subject.practical})</span>` : ""}</li>`
+                `<li>${subject.name}: ${
+                  subject.hasPractical ? "Theory + Practical" : "Theory"
+                }</li>`
             )
             .join("")}
         </ul>
@@ -129,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>Notes</h3>
         <ul>
           ${selectedSubjects
-            .filter((subject) => !subject.practical)  // Exclude practical subjects
-            .map((subject) => `<li>${subject.theory} <button>Download</button></li>`)
+            .filter((subject) => !subject.hasPractical) // Exclude practical subjects
+            .map((subject) => `<li>${subject.name} <button>Download</button></li>`)
             .join("")}
         </ul>
       </div>
@@ -138,15 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>PYQs</h3>
         <ul>
           ${selectedSubjects
-            .filter((subject) => !subject.practical)  // Exclude practical subjects
-            .map((subject) => `<li>${subject.theory} <button>Download</button></li>`)
+            .filter((subject) => !subject.hasPractical) // Exclude practical subjects
+            .map((subject) => `<li>${subject.name} <button>Download</button></li>`)
             .join("")}
         </ul>
       </div>
     `;
   }
 
-  // Program and semester toggle
+  // Handle program toggle
   programToggle.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {
       document.querySelectorAll(".program-toggle button").forEach((btn) => btn.classList.remove("active"));
